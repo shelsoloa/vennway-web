@@ -1,78 +1,117 @@
 import Image from "next/image";
+import { Topbar } from "./_components/Topbar";
 
-const JOIN_URL = "https://cal.com/shelsoloa";
-const EVENTS_URL = "https://luma.com/vennway";
-const LINKEDIN_URL = "https://www.linkedin.com/company/vennway";
+const INTAKE_URL = "https://cal.com/shelsoloa";
 
-const secondaryButton =
-  "flex items-center gap-2 rounded-sm border border-zinc-500 px-5 py-2.5 text-zinc-500 transition-colors hover:border-zinc-300 hover:text-zinc-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300";
+const steps = [
+  {
+    title: "Intake",
+    body: "Tell us what you're building, your current challenges, and the people you want to meet.",
+  },
+  {
+    title: "Curate",
+    body: "We match you with a small high-signal group of vetted founders, operators, and experts.",
+  },
+  {
+    title: "Execute",
+    body: "We handle the logistics and facilitation, you focus on the conversation and outcomes.",
+  },
+];
+
+const stats = [
+  { value: "10–15", label: "People per round table" },
+  { value: "3+", label: "Curated cohorts monthly" },
+  { value: "Toronto", label: "Our home base" },
+];
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16 text-center">
-      <div className="grid grid-cols-[auto_auto] items-center gap-x-3 sm:gap-x-6">
-        <Image
-          src="/vennway-icon.png"
-          alt=""
-          width={160}
-          height={160}
-          priority
-          className="h-16 w-16 sm:h-[104px] sm:w-[104px]"
-        />
-        <h1 className="font-heading text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Vennway
-        </h1>
-        <p className="col-start-2 -mt-1 text-left font-heading text-[10px] font-extralight uppercase tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
-          Better connections,
-          <br />
-          by design.
-        </p>
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <a
-          href={JOIN_URL}
-          className="rounded-sm border-2 border-golden-light bg-golden-light px-12 py-4 font-heading text-lg font-bold text-charcoal transition-colors hover:bg-golden-light/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
-        >
-          Schedule Intake Call
-        </a>
-
-        <div className="flex flex-col items-center gap-3 text-sm sm:flex-row">
-          <a
-            href={EVENTS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={secondaryButton}
+    <>
+      <Topbar />
+      <main className="flex flex-1 flex-col">
+        <section className="relative isolate overflow-hidden bg-[linear-gradient(100deg,#020506_0%,#04100f_35%,#0e3d32_100%)] text-stone">
+          <div
+            className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[65%]"
+            aria-hidden="true"
           >
-            View our public events
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-4 w-4"
-              aria-hidden="true"
-            >
-              <path d="M12 1C12.6 7.5 16.5 11.4 23 12 16.5 12.6 12.6 16.5 12 23 11.4 16.5 7.5 12.6 1 12 7.5 11.4 11.4 7.5 12 1Z" />
-            </svg>
-          </a>
+            <Image
+              src="/vennway_banner.png"
+              alt=""
+              fill
+              preload
+              sizes="(min-width: 1024px) 65vw, 100vw"
+              className="object-cover object-right"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#04100f_0%,#04100f_15%,rgba(4,16,15,0.6)_55%,transparent_100%)] lg:bg-[linear-gradient(to_right,#04100f_0%,#04100f_30%,rgba(4,16,15,0.55)_65%,transparent_100%)]" />
+          </div>
 
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={secondaryButton}
-          >
-            Follow us on LinkedIn
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-4 w-4"
-              aria-hidden="true"
-            >
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </main>
+          <div className="mx-auto flex min-h-[28rem] max-w-7xl flex-col justify-center gap-8 px-4 py-20 sm:px-6 sm:py-24 lg:min-h-[34rem] lg:px-8">
+            <h1 className="max-w-xl font-heading text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+              High-intent roundtables for{" "}
+              <span className="text-golden-light">founders and operators</span>
+            </h1>
+            <div>
+              <a
+                href={INTAKE_URL}
+                className="inline-block rounded-sm bg-warm-clay px-8 py-3 font-heading text-base font-bold text-white transition-colors hover:bg-warm-clay/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
+              >
+                Join
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="how-it-works" className="bg-stone">
+          <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[2fr_3fr] lg:gap-10 lg:px-8 lg:py-20">
+            <div>
+              <p className="font-heading text-xs font-medium uppercase tracking-[0.2em] text-warm-clay">
+                How it works
+              </p>
+              <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-charcoal sm:text-4xl">
+                We do the sourcing, matching, and invites.
+                <br />
+                You get the right room
+              </h2>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal/70">
+                Tell us what you&apos;re building and who you need to meet. We
+                find your matching attendees, manage the event, and structure
+                the conversation around your goals.
+              </p>
+            </div>
+
+            <ol className="grid gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-charcoal/15">
+              {steps.map((step, i) => (
+                <li key={step.title} className="sm:px-6 sm:first:pl-0 sm:last:pr-0">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-golden-light font-heading text-base font-bold text-warm-clay">
+                    {i + 1}
+                  </span>
+                  <h3 className="mt-4 font-heading text-xl font-bold text-charcoal">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/70">
+                    {step.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-[linear-gradient(100deg,#04100f_0%,#0a2a23_50%,#0e3d32_100%)] text-stone">
+          <dl className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-stone/15 sm:px-6 lg:px-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="sm:px-8 sm:first:pl-0 sm:last:pr-0">
+                <dd className="font-heading text-3xl font-bold tracking-tight text-golden-light sm:text-4xl">
+                  {stat.value}
+                </dd>
+                <dt className="mt-1 font-heading text-xs font-medium uppercase tracking-[0.18em] text-stone/70">
+                  {stat.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </main>
+    </>
   );
 }

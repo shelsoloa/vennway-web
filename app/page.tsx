@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { Footer } from "./_components/Footer";
 import { Topbar } from "./_components/Topbar";
-
-const INTAKE_URL = "https://cal.com/shelsoloa";
+import { INTAKE_URL, LINKEDIN_URL } from "./_lib/links";
 
 const steps = [
   {
@@ -50,12 +50,20 @@ export default function Home() {
               High-intent roundtables for{" "}
               <span className="text-golden-light">founders and operators</span>
             </h1>
-            <div>
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href={INTAKE_URL}
-                className="inline-block rounded-sm bg-warm-clay px-8 py-3 font-heading text-base font-bold text-white transition-colors hover:bg-warm-clay/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
+                className="inline-block rounded-sm border border-warm-clay bg-warm-clay px-8 py-3 font-heading text-base font-bold text-white transition-colors hover:bg-warm-clay/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
               >
                 Join
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-sm border border-stone/60 px-8 py-3 font-heading text-base font-bold text-stone transition-colors hover:border-stone hover:bg-stone/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
+              >
+                Connect with us on LinkedIn
               </a>
             </div>
           </div>
@@ -112,6 +120,7 @@ export default function Home() {
           </dl>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

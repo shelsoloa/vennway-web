@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
-const INTAKE_URL = "https://cal.com/shelsoloa";
-const EVENTS_URL = "https://luma.com/vennway";
+import { EVENTS_URL, INTAKE_URL } from "../_lib/links";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm-clay";
@@ -80,10 +79,17 @@ export function Topbar() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-8 lg:flex"
+          className="hidden items-center gap-5 lg:flex"
         >
-          {navLinks.map((link) => (
-            <NavLink key={link.label} link={link} />
+          {navLinks.map((link, i) => (
+            <Fragment key={link.label}>
+              {i > 0 && (
+                <span aria-hidden="true" className="text-charcoal/30">
+                  |
+                </span>
+              )}
+              <NavLink link={link} />
+            </Fragment>
           ))}
         </nav>
 

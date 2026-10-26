@@ -29,7 +29,7 @@ export default function Home() {
     <>
       <Topbar />
       <main className="flex flex-1 flex-col">
-        <section className="relative isolate overflow-hidden bg-[linear-gradient(100deg,#020506_0%,#04100f_35%,#0e3d32_100%)] text-stone">
+        <section className="relative isolate overflow-hidden bg-deep-green text-stone">
           <div
             className="absolute inset-y-0 right-0 -z-10 w-full lg:w-[65%]"
             aria-hidden="true"
@@ -42,7 +42,7 @@ export default function Home() {
               sizes="(min-width: 1024px) 65vw, 100vw"
               className="object-cover object-right"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#04100f_0%,#04100f_15%,rgba(4,16,15,0.6)_55%,transparent_100%)] lg:bg-[linear-gradient(to_right,#04100f_0%,#04100f_30%,rgba(4,16,15,0.55)_65%,transparent_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3d32_0%,#0e3d32_15%,rgba(14,61,50,0.6)_55%,transparent_100%)] lg:bg-[linear-gradient(to_right,#0e3d32_0%,#0e3d32_30%,rgba(14,61,50,0.55)_65%,transparent_100%)]" />
           </div>
 
           <div className="mx-auto flex min-h-[28rem] max-w-7xl flex-col justify-center gap-8 px-4 py-20 sm:px-6 sm:py-24 lg:min-h-[34rem] lg:px-8">
@@ -69,8 +69,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="bg-stone">
-          <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[2fr_3fr] lg:gap-10 lg:px-8 lg:py-20">
+        <section
+          id="how-it-works"
+          className="flex flex-1 items-center bg-stone"
+        >
+          <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[2fr_3fr] lg:gap-10 lg:px-8 lg:py-20">
             <div>
               <p className="font-heading text-xs font-medium uppercase tracking-[0.2em] text-warm-clay">
                 How it works
@@ -89,7 +92,10 @@ export default function Home() {
 
             <ol className="grid gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-charcoal/15">
               {steps.map((step, i) => (
-                <li key={step.title} className="sm:px-6 sm:first:pl-0 sm:last:pr-0">
+                <li
+                  key={step.title}
+                  className="sm:px-6 sm:first:pl-0 sm:last:pr-0"
+                >
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-golden-light font-heading text-base font-bold text-warm-clay">
                     {i + 1}
                   </span>
@@ -108,7 +114,10 @@ export default function Home() {
         <section className="bg-[linear-gradient(100deg,#04100f_0%,#0a2a23_50%,#0e3d32_100%)] text-stone">
           <dl className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-stone/15 sm:px-6 lg:px-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="sm:px-8 sm:first:pl-0 sm:last:pr-0">
+              <div
+                key={stat.label}
+                className="sm:px-8 sm:first:pl-0 sm:last:pr-0"
+              >
                 <dd className="font-heading text-3xl font-bold tracking-tight text-golden-light sm:text-4xl">
                   {stat.value}
                 </dd>

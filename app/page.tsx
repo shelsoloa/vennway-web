@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Footer } from "./_components/Footer";
-import { Topbar } from "./_components/Topbar";
 import { INTAKE_URL, LINKEDIN_URL } from "./_lib/links";
 
 const steps = [
@@ -27,7 +26,6 @@ const stats = [
 export default function Home() {
   return (
     <>
-      <Topbar />
       <main className="flex flex-1 flex-col">
         <section className="relative isolate overflow-hidden bg-deep-green text-stone">
           <div

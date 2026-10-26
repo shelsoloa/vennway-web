@@ -6,19 +6,19 @@ const LINKEDIN_URL = "https://www.linkedin.com/company/vennway";
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16 text-center">
-      <div className="flex flex-col items-center gap-6">
+      <div className="grid grid-cols-[auto_auto] items-center gap-x-3 sm:gap-x-6">
         <Image
           src="/vennway-icon.png"
           alt=""
           width={160}
           height={160}
           priority
-          className="h-32 w-32 sm:h-40 sm:w-40"
+          className="h-16 w-16 sm:h-[104px] sm:w-[104px]"
         />
-        <h1 className="font-heading text-5xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="font-heading text-4xl font-extrabold tracking-tight sm:text-6xl">
           Vennway
         </h1>
-        <p className="font-heading text-sm font-medium uppercase tracking-[0.3em] sm:text-base">
+        <p className="col-start-2 -mt-1 text-left font-heading text-[10px] font-extralight uppercase tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
           Better connections,
           <br />
           by design.
@@ -27,7 +27,7 @@ export default function Home() {
 
       <a
         href={JOIN_URL}
-        className="rounded-full bg-golden-light px-10 py-3 font-heading text-base font-bold text-background transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
+        className="border-2 border-golden-light bg-transparent px-10 py-3 font-heading text-base font-bold text-golden-light transition-colors hover:bg-golden-light/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-golden-light"
       >
         Join
       </a>
